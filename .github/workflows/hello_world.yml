@@ -33,6 +33,7 @@ jobs:
     steps:
       - name: terceiro passo
       run: date
+      run: env | sort
         
  job4:
     name: Quarto Job
