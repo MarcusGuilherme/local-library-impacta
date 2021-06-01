@@ -43,8 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DB_URI: $${{ secrets.DB_URI }}
-      
-    needs: [sonarcloud]
+      needs: [SonarCloud]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
