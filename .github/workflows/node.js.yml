@@ -64,6 +64,7 @@ jobs:
       NODE_ENV: production
       
     needs: [deploy]
+    environment: producao
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
