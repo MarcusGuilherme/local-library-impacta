@@ -51,19 +51,19 @@ jobs:
       
       - name: Set env variables
         run: 
-        heroku config:set MONGODB_URI=${{ env.DB_URI }}
+          heroku config:set MONGODB_URI=${{ env.DB_URI }}
       
       - name: Push code to Heroku
         run: git push heroku main
        
-       
-        deploy-producao:
+     
+  deploy-producao:
     runs-on: ubuntu-latest
     env:
       DB_URI: $${{ secrets.DB_URI }}
       NODE_ENV: production
       
-    needs: [app-impacta-marcus-cunha-hom]
+    needs: [deploy]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
